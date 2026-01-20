@@ -66,3 +66,6 @@ let temp_d_let = 24;
 // var --> hosist --> undefined
 // let --> hosist --> ReferenceError
 // const --> hosist --> ReferenceError
+
+
+
