@@ -86,3 +86,7 @@ let num = 10;
 let parity = (num % 2 === 0) ? "Even" : "Odd";
 console.log("The number is", parity);
 
+// instanceof operator
+let f = [1,2,3,4,5];
+f instanceof Array; // true
+f instanceof Object; // true
