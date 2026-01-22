@@ -131,7 +131,4 @@ function score2(value){
 }
 
 
-// <p>Rock-Paper-Scissors:</p>
-// <p>rock - scissors --> rock</P>
-// <p>paper - rock --> paper</P>
-// <p>scissors - paper --> scissors</P>
+
