@@ -489,10 +489,10 @@ while (i <= 15) {
 for (let i = 1; i <= 10; i++) {
     console.log(`5 x ${i} = ${5 * i}`);
 }
-
+                                             
 </p>
 </div>
- 
+                                                      
 <div>
 <h1>Example 6:</h1>
 <p>Find the sum of numbers from 1 to 100 using a loop.</p>
