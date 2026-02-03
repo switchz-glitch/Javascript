@@ -239,3 +239,24 @@ function outer2(){
 
 }
 outer2();
+
+// IIFE - Immediately invocked func expression
+(function () {})(); // func je declare jarta j call thai jaye
+(function temp_IIFE(){
+    console.log("IIFE Function")
+})();
+
+// Hoisting in function
+temp_abc();
+function temp_abc(){
+    console.log("hosting Function")
+}
+
+
+let  temp_abc1 = () => {
+    console.log("acd Function")
+}
+temp_abc1();
+
+// <p>What's the difference between function declaration and function expression in terms of hoisting?</p>
+
