@@ -879,4 +879,137 @@ numPure(5, 3);<p>
 <P>Why: Function declaration is fully hoisted</p>
 <P>Output: Hello</p>
 </div>
- 
+    
+
+
+
+
+
+
+1. Double daily steps count
+
+Real life: Fitness app doubling step goal
+
+const steps = [1000, 2000, 3000];
+
+function doubleSteps(step) {
+  return step * 2;
+}
+
+const newSteps = steps.map(doubleSteps);
+console.log(newSteps);
+
+
+2. Convert minutes to seconds
+
+Real life: Video duration calculation
+
+const minutes = [1, 5, 10];
+
+const seconds = minutes.map(function(min) {
+  return min * 60;
+});
+console.log(seconds)
+
+
+3. Add ₹50 delivery charge to prices
+
+Real life: Food delivery app
+
+const prices1 = [200, 350, 500];
+
+const finalPrices = prices1.map(price => price + 50);
+
+console.log(finalPrices);
+
+
+4. Convert exam marks to grades
+
+Real life: Result system
+
+const marks = [35, 72, 88, 40];
+
+function getGrade(mark) {
+  return mark >= 40 ? 'Pass' : 'Fail';
+}
+
+const grades = marks.map(getGrade);
+console.log(grades)
+
+
+5. Capitalize names
+
+Real life: Display usernames properly
+
+const names1 = ['rahul', 'neha', 'amit'];
+
+const formattedNames = names1.map(name =>
+  name[0].toUpperCase() + name.slice(1)
+);
+console.log(formattedNames)
+
+
+6. Apply 10% discount
+
+Real life: Shopping sale
+
+const prices1 = [500, 1000, 1500];
+
+function applyDiscount(price) {
+  return price - price * 0.10;
+}
+
+const discounted = prices1.map(applyDiscount);
+console.log(discounted)
+
+
+
+7. Add bonus points to scores based on condition
+
+Real life: Game scoring system
+
+const scores1 = [45, 60, 85];
+
+const finalScores = scores1.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+console.log(finalScores)
+
+
+8. Convert temperatures with formula
+
+Real life: Weather app
+
+const celsius = [0, 20, 30];
+
+function toFahrenheit(temp) {
+  return (temp * 9/5) + 32;
+}
+
+const fahrenheit = celsius.map(toFahrenheit);
+console.log(fahrenheit)
+
+
+
+9. Generate table of numbers
+
+Real life: Math learning app
+
+const numbers = [1, 2, 3, 4];
+
+const tableOfTwo = numbers.map(num => num * 2);
+console.log(tableOfTwo)
+
+
+
+10. Combine map with string formatting
+
+Real life: SMS notification system
+
+const balances = [500, 1200, 300];
+
+const messages = balances.map(balance =>
+  `Your balance is ₹${balance}`
+);
