@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .card{
+            height: auto;
+            width: 500px;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 1rem;
+            background-color: rgb(9, 56, 28);
+            text-align: center;
+            color: rgb(238, 227, 204);
+            display: none;
+        
+        }
+        .outer{
+            width: 20%;
+            padding: 20px;
+            border-radius: 16px;
+            background-color: rgb(7, 24, 3);
+            margin:  0 auto;
+            text-align: center;
+            
+
+        }
+        .progress-card{
+            margin: 10px 0;
+            height: 5px;
+            width: 100%;
+            background-color: rgb(235, 221, 200);
+            border-radius: 7px;
+            overflow: hidden;
+
+        }
+        .progress-bar{
+            height: 100%;
+            width: 0%;
+            background: rgb(0, 0, 0);
+            transition: width 0.3s ease;
+
+        }
+        .percent{
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(117, 117, 117);
+            letter-spacing: 0.5px;
+
+        }
+        h2{
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <div class="card">
+
+<h1>Welcome To Surat</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatem! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores cum veniam sapiente nesciunt laudantium nostrum inventore magnam optio id blanditiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis illum dolorum doloribus? Delectus, sint nisi minima fugit, fugiat consequatur corporis dicta dolores nulla sed exercitationem aliquid quasi itaque autem placeat suscipit non totam tenetur quaerat eos commodi necessitatibus eligendi porro aperiam. Ea totam nemo dolores praesentium tenetur, repellat nisi fugiat.</p>
+   
+<button>Close</button>
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="download">
+        <div class="outer">
+            <h2>Downloading ..</h2>
+            <div class="progress-card">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="percent">0%</p>
+        </div>
+    </div>
+</body>
+<script src="Timmer.js"></script>
+</html>

@@ -310,7 +310,223 @@ let temp_data = data.map((val) =>{
 
 
 
+// filter 
+// filter tayare use karvu kr jayare ek new array create karvo chhe with condition
+// in return true/false
+// if true --> add into new array
+// if else (false) --> not add into new array
+let laptop = [150000,20000,25000,65000,90000,45000];
+
+let expensive = laptop.filter((price) => {
+    if (price > 30000) return true;
+});
+
+// je value 300000 thi vadhare chhe te new aray ma add thase and biji value ne array ma add nahi kare
+
+// use case --> data ma thi specificly data new array ma store karvo hoy based on condition
+
+// ex. product ma thi specificly price na products new array ma store karva hoy
+
+// if you want to show only expensive products on home page 
+// if you wnat to fillter products based on price
+let product_type = ["mobile", "tablet", "laptop", "mouse", "keybord"];
+
+let filter_product_type = product_type.filter((type) => {
+    if (type === "tablet" || type === "mobile") return true;
+});
+
+
+// reduce
+// reduce tayare j use karvu ke jaya ek single values clacutate karavi hoy from array
+let = total_price = [10,68,45,58,52,48];
+
+let final_total_price = total_price.reduce((accumulator, val) => {
+    return accumulator + val;
+});
+
+// 0 + 10 = 10
+// 10 + 68 = 78
+// 78 + 45 = 123
+console.log("final price", final_total_price);
+// accumulator --> je value functon ma retun thase te accumulator ma store thase --> accumulator name change kari sako chho
+// val -- array ni darek values
+
+// use case --> data ma thi ek single values cluclate karavi hoy \
+// ex. products ma thi total price claculate karavi hoy
+
+// find
+// find tayare j use karvu ke jayare array mathi ek values find karavi hoy based on condition
+// find() return kare chhe array no element --> callback no return value nathi
+// never return what you return inside it
+// return the arrray element itself -- not return array
+// find() stop at the first match
+// it does not continues looping
+
+let product = ["mobile", "tablet", "laptop","desktop", "mouse", "keybord"];
+
+let find_product = product.find((item) => {
+    if (item === "desktop"){
+        return true;
+
+    } else if (item === "tablet"){
+        return true;
+    } else{
+      return false;
+    }
+});
+
+// use case --> data ma thi ek value find karavi hoy based on condition
+// ex. product ma thi specificly product find karavo hoy based on name
 
 
 
+// find vs filter 
+// real-life scenario: shopping mall security
+// your are security guard at a shopping mall
+// chack the list of visitors
+let people = ["jhon", "sara", "mike", "anna","david", "sara"];
+ // find --> you are looking for the first person  named "sara" in the list and stop serching (pehli var j male, bas e j and anagal check j na kare)
+let person = people.find((name)=> name === "sara");
+console.log("find", person);
+
+// filter --> you want to find all visitors name "sara" in the list(all data check kare and list na end sudhi check kare)
+let allsara = people.filter((name)=> name === "sara");
+console.log("filter", allsara);
+
+// ex 2: book bus for travel
+
+// some
+// check kare chhe ke array ma koi pan ek item condition satisfy kare chhe ke nahi
+// condition true aave tyare stop kare
+// some() vs find() return values of array true or false, find() return value of array
+// give ans in true and false
+let markes1 = [10,20,35,90];
+let any = markes1.some((val)=>{
+    if (val > 85) return 12;
+    // if (val < 85) return "need improvment";
+});
+console.log(any);
+// use case --> check if some product are out of stock in your cart
+
+// every 
+// check kare chhe ke aray ma baddha j item condition satisfy kare chh ke nai
+// true -- baha items condition mathch kare
+// false -- ek pan fail thay to
+let def = [20,30,5,35];
+let num = def.every(function(val){
+    return val < 40;
+});
+ 
+// use case --> check all stusent is pass or not
+
+// some(), find(), filter(), every()
+// let products = ["tablet", "mobile", "laptop", "mobile"];
+// method --> condition --> output
+// .some() --> item === "mobile" --> true
+// .find() --> item === "mobile" --> "mobile"
+// .filter() --> item === "mobile" --> ["mobile", "mobile"]
+// .every() --> item === "mobile" --> false
+
+// destucturing oprator -- give value to variable (ex. we don't use every time arr11[1], just sane it into variable let [ , k] = arr1)
+let arr12 = [1,2,3,4,5];
+// let j = arr12[0]; --> 1
+// let k = arr12[0]; --> 3
+let [j, , k] = arr12; // destrucring
+// let [, , n]= arr12;
+console.log(k);
+let user_data = ["test", "test@gamil.com", "male", "suart"]
+// console.log("name", name)
+
+
+// spead oprator -- copy value from main array
+let arr8 = [1,2,3,4,5,6,7,8];
+// let arr12 = arr13; -- just give refernce not copy value 
+let arr9 = [...arr8];
+// ... --- rest -- into function
+// ... --- spred --- into array and object -- copy
+let temp_arr = [1,2,3];
+let temp_arr2 = [4,5,6];
+let mix_arr = [...temp_arr, ...temp_arr2]
+
+
+
+
+
+
+// map + filter + reduce – Practice Questions (Single File)
+
+// Q1. Shopping App – Discounted Total
+const prices1 = [50, 120, 300, 80, 200];
+const total1 = prices1.filter(price => price > 100).map(price => price * 0.5).reduce((sum, price) => sum + price, 0);
+console.log('Q1 Total:', total1); // 310
+
+// Q2. Fitness App – Total Active Minutes
+const minutes = [10, 25, 40, 15, 60];
+const totalCalories = minutes
+  .filter(min => min > 30)
+  .map(min => min * 5)
+  .reduce((total, cal) => total + cal, 0);
+console.log('Q2 Total Calories:', totalCalories); // 975
+
+// Q3. Exam System – Average of Passed Marks
+const marks = [35, 72, 88, 40, 25, 90];
+const passed = marks.filter(mark => mark >= 40);
+const average = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;
+console.log('Q3 Average Marks:', average); // 72.5
+
+// Q4. Salary System – Monthly Payout
+const wages = [300, 800, 450, 1000, 600];
+const totalPayout = wages
+  .filter(wage => wage > 500)
+  .map(wage => wage + 100)
+  .reduce((total, wage) => total + wage, 0);
+console.log('Q4 Total Payout:', totalPayout); // 2700
+
+// Q5. Online Course – Completion Points
+const progress = [20, 50, 75, 40, 100];
+const totalPoints1 = progress
+  .filter(p => p >= 50)
+  .map(p => p * 2)
+  .reduce((sum, p) => sum + p, 0);
+console.log('Q5 Total Points:', totalPoints1); // 450
+
+// Q6. Bank Transactions – Final Credited Amount
+const transactions = [1000, -500, 2000, -300, 1500];
+const creditedAmount = transactions
+  .filter(amount => amount > 0)
+  .map(amount => amount * 1.02)
+  .reduce((total, amount) => total + amount, 0);
+console.log('Q6 Credited Amount:', creditedAmount); // 4590
+
+// Q7. Game App – Final Score
+const scores1 = [30, 60, 90, 45, 80];
+const finalScore = scores1
+  .filter(score => score > 50)
+  .map(score => score + 10)
+  .reduce((sum, score) => sum + score, 0);
+console.log('Q7 Final Score:', finalScore); // 270
+
+// Q8. E-commerce – Total Taxed Amount
+const prices2 = [500, 1200, 3000, 800, 1500];
+const finalAmount = prices2
+  .filter(price => price > 1000)
+  .map(price => price * 1.18)
+  .reduce((sum, price) => sum + price, 0);
+console.log('Q8 Final Amount:', finalAmount); // 6724
+
+// Q9. Attendance System – Reward Points
+const hours = [6, 8, 9, 7, 10];
+const totalPoints2 = hours
+  .filter(hour => hour >= 8)
+  .map(hour => hour * 10)
+  .reduce((sum, point) => sum + point, 0);
+console.log('Q9 Total Points:', totalPoints2); // 270
+
+// Q10. Interview Brain Teaser – Sum of Squares
+const numbers = [1, 2, 3, 4, 5, 6];
+const sumOfSquares = numbers
+  .filter(num => num % 2 === 0)
+  .map(num => num * num)
+  .reduce((sum, num) => sum + num, 0);
+console.log('Q10 Sum of Squares:', sumOfSquares); // 56
 
