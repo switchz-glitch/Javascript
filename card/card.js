@@ -211,3 +211,13 @@ update();
 });
 
 
+// event context
+let h1 = document.querySelector("h1");
+h1.addEventListener("click", function (){
+    console.log(this);
+});
+// fnc --> h1 tag(html element)
+// arrow fnc
+
+
+
